@@ -1,14 +1,14 @@
 html {
     font-size: 16px;
-    
 }
 
 .container {
     background-color: #ccc;
     border: 2px solid black;
     border-radius: 10px;
-    margin: 1em;
     align-items: center;
+    margin: 1em;
+    justify-items: center;
     margin-top: 10vh;
    
 
@@ -27,4 +27,13 @@ html {
     list-style: none;
     text-align: center;
 
+}
+
+.container input {
+border: 1px solid;
+text-align: center;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  transform: translate(50%, 0);
 }
