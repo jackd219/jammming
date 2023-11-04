@@ -1,33 +1,38 @@
-import { useState } from 'react';
+import React from 'react';
 import styles from './Playlist.module.css';
-import SearchResults from './SearchResults';
 
+const Playlist = ({ playlist, removeTrackFromPlaylist, handlePlaylistName}) => {
+  
 
-const Playlist = ({ playlists }) => {
+  
 
-    const [playlist, setPlaylist] = useState([]);
-    const [playlistName, setPlaylistName] = useState('');
-
-    return (
-      <div className={styles.container}>
-        <h2>Name your playlist below</h2>
-            <input type="text"
-            value={playlistName}
-            onChange={(e) => setPlaylistName(e.target.value)}
-            placeholder="Enter playlist name"></input>
+  return (
+    <div className={styles.container}>
+      <h2>Name your playlist below</h2>
+      <input
+        type="text"
+             onChange={handlePlaylistName}
+        placeholder="Enter playlist name"
+      />
+      <div className={styles.trackList}>
+ 
         <ul>
-          {playlists.map((playlist, index) => (
+          {playlist.map((track, index) => (
             <li key={index}>
-              <p>Song Name: {playlist.songName}</p>
-              <p>Artist: {playlist.artist}</p>
-              <p>Album: {playlist.album}</p>
-              <button>Remove Track</button>
+              <p>Song Name: {track.songName}</p>
+              <p>Artist: {track.artist}</p>
+              <p>Album: {track.album}</p>
+              <button onClick={() => {
+              removeTrackFromPlaylist(index); // Check if this button click is handled
+              console.log('Removing track:', track);
+            }}>Remove Track</button>
             </li>
           ))}
         </ul>
       </div>
-    );
-  };
-  
-  export default Playlist;
+    </div>
+  );
+};
+
+export default Playlist;
   
