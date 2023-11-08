@@ -10,7 +10,7 @@ html {
     margin: 1em;
     justify-items: center;
     margin-top: 10vh;
-   
+   display: block
 
 }
 
@@ -33,7 +33,25 @@ html {
 border: 1px solid;
 text-align: center;
   margin: auto;
-  width: 50%;
+  width: 30%;
   padding: 10px;
-  transform: translate(50%, 0);
+  transform: translate(110%, 0);
 }
+
+.container button {
+    border: 1px solid;
+    text-align: center;
+      margin: auto;
+      width: 20%;
+      padding: 10px;
+      
+      
+    }
+
+    .playlistButton button {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        transform: translate(200%, 0);
+        margin-top: 10px;
+    }
